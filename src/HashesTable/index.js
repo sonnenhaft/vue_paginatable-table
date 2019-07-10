@@ -1,0 +1,1 @@
+export { default as HashesTable } from './HashesTable.vue'

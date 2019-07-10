@@ -1,0 +1,72 @@
+{
+  "name": "vue_paginatable-table",
+  "version": "1.0.0",
+  "homepage": "https://sonnenhaft.github.io/vue_paginatable-table",
+  "scripts": {
+    "serve": "vue-cli-service serve --port=7777",
+    "build": "vue-cli-service build --outputDir=./dirr",
+    "lint:fix": "vue-cli-service lint --fix"
+  },
+  "license": "GNU",
+  "author": {
+    "name": "Vladimir Shein",
+    "email": "vladimir.sonnenhaft@gmail.com",
+    "url": "https://github.com/sonnenhaft"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.24",
+    "chance": "^1.0.18",
+    "core-js": "^2.6.5",
+    "font-awesome": "^4.7.0",
+    "mobx": "^4.12.0",
+    "mobx-persist": "^0.4.1",
+    "mobx-vue": "^2.0.9",
+    "moment": "^2.24.0",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.2.1",
+    "vue-router": "^3.0.3",
+    "vue-template-compiler": "^2.6.10",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "error-overlay-webpack-plugin": "^0.3.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
