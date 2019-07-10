@@ -16,6 +16,7 @@
 
         <template slot="arrow-empty-td">
             <font-awesome-icon icon="arrow-right" />
+            &nbsp;
             <font-awesome-icon icon="file" />
         </template>
 
@@ -23,8 +24,8 @@
             <HashLink :hash="item.value" />
         </template>
 
-        <template slot="time" slot-scope="item">
-            <FromNow :time="item.value" />
+        <template slot="timestamp" slot-scope="item">
+            <FromNow :time="Date(item.value)" />
         </template>
     </b-table>
 </template>
@@ -45,7 +46,7 @@
           { key: 'arrow-empty-td', sortable: false, label: '', tdClass: 'hashes-table__icons' },
           { key: 'to', sortable: true, tdClass: 'hashes-table__hash' },
           { key: 'value', sortable: true, formatter: num => `${ Number(num).toFixed(2) } ETH`, tdClass: 'hashes-table__value' },
-          { key: 'time', sortable: true }
+          { key: 'timestamp', label: 'Time', sortable: true }
         ]
       }
     }

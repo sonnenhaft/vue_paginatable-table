@@ -2,35 +2,35 @@
     <div>
         <span>
             <router-link :to="'/transactions'" tag="a">Transactions</router-link>
-            / {{ id }}
+            / <HashLink :hash="id" :no-link="true"/>
         </span>
 
         <br><br>
         <h4>
             Transaction Details
             &nbsp;
-            <b-badge pill variant="success" v-if="!loading">{{ item.value || 'Unkonwn' }}</b-badge>
+            <b-badge pill variant="success" v-if="!loading">{{ item.type || 'Unkonwn' }}</b-badge>
 
             <b-spinner :label="'Loading transaction' + id" small v-if="loading"
-                       style="vertical-align: baseline" />
+                       style="vertical-align: baseline"/>
         </h4>
         <br><br>
 
         <HashLink :hash="id" target="_blank">
-            &nbsp;
-            <font-awesome-icon icon="external-link-alt" />
+            &nbsp;&nbsp;
+            <font-awesome-icon icon="external-link-alt"/>
         </HashLink>
 
         <div v-if="!loading">
             <div class="titled-blocks">
                 <div>
                     <span>From: </span>
-                    <HashLink :hash="item.from" />
+                    <HashLink :hash="item.from"/>
                 </div>
 
                 <div>
                     <span>To: </span>
-                    <HashLink :hash="item.to" />
+                    <HashLink :hash="item.to"/>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
 
                 <div>
                     <span>Time:</span>
-                    <FromNow :time="item.timestamp" />
+                    <FromNow :time="item.timestamp"/>
                 </div>
             </div>
 
@@ -49,7 +49,8 @@
             <br>
 
             <div>
-                <h5 v-on:click="state.transactionsDetailsExpanded = !state.transactionsDetailsExpanded" style="cursor: pointer;">
+                <h5 v-on:click="state.transactionsDetailsExpanded = !state.transactionsDetailsExpanded"
+                    style="cursor: pointer;">
                     Additional Details
                     <span style="user-select: none">
                         &nbsp;{{ state.transactionsDetailsExpanded ? '▼' : '▲' }}
@@ -57,17 +58,17 @@
                 </h5>
 
                 <div v-if="state.transactionsDetailsExpanded">
-                    <hr />
+                    <hr/>
 
                     <div class="titled-blocks">
                         <div>
                             <span>Input Bytecode: </span>
-                            <HashLink :hash="item.input" />
+                            <HashLink :hash="item.input" :no-link="true"/>
                         </div>
 
                         <div>
                             <span>Block: </span>
-                            <HashLink :hash="item.blockNumber" />
+                            <HashLink :hash="item.blockNumber" :no-link="true"/>
                         </div>
                     </div>
 
@@ -99,41 +100,41 @@
 </template>
 
 <script>
-  import HashLink from './HashesTable/HashLink'
-  import FromNow from './HashesTable/FromNow'
-  import { transactionsViewModel } from './transactionsViewModel';
-  import Component from 'vue-class-component';
-  import { Vue, Watch } from 'vue-property-decorator'
+    import HashLink from './HashesTable/HashLink'
+    import FromNow from './HashesTable/FromNow'
+    import {transactionsViewModel} from './transactionsViewModel';
+    import Component from 'vue-class-component';
+    import {Vue, Watch} from 'vue-property-decorator'
 
-  export default @Component({
-    components: { HashLink, FromNow }
-  })
-  class TransactionsPage extends Vue {
-    mounted() {
-      this.state.loadTransaction(this.id)
-    }
+    export default @Component({
+        components: {HashLink, FromNow}
+    })
+    class TransactionsPage extends Vue {
+        mounted() {
+            this.state.loadTransaction(this.id)
+        }
 
-    data() {
-      return { state: transactionsViewModel }
-    }
+        data() {
+            return {state: transactionsViewModel}
+        }
 
-    get id() {
-      return this.$route.params.id
-    }
+        get id() {
+            return this.$route.params.id
+        }
 
-    get loading() {
-      return this.state.loadingTransaction
-    }
+        get loading() {
+            return this.state.loadingTransaction
+        }
 
-    get item() {
-      return this.state.selectedTransaction
-    }
+        get item() {
+            return this.state.selectedTransaction
+        }
 
-    @Watch('id')
-    onIdChanged() {
-      this.state.loadTransaction(this.id)
+        @Watch('id')
+        onIdChanged() {
+            this.state.loadTransaction(this.id)
+        }
     }
-  }
 </script>
 
 <style scoped>

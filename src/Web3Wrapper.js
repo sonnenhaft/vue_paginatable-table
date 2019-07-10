@@ -27,7 +27,7 @@ export class Web3Wrapper {
       block.transactions.forEach(transactionHash => {
         transactionPromises.push(web3.eth.getTransaction(transactionHash).then(transaction => {
           transaction.timestamp = block.timestamp;
-          block.transactionsData.push(transaction)
+          block.transactionsData.push(transaction);
           transactions.push(transaction);
         }));
       });
@@ -39,6 +39,8 @@ export class Web3Wrapper {
   }
 
   async getTransaction(hash) {
+    const web3 = this.web3;
+
     const transaction = await web3.eth.getTransaction(hash);
     const { timestamp } = await web3.eth.getBlock(transaction.blockNumber);
     transaction.timestamp = timestamp;

@@ -36,11 +36,9 @@ export class Web3WrapperFake {
   async getTransactions() {
     await delay(500);
 
-    let t = Array
-      .from(Array(TOTAL_TRANSACTIONS).keys())
-      .map(getTransaction);
-    console.log(t);
-    return t;
+    return Array
+        .from(Array(TOTAL_TRANSACTIONS).keys())
+        .map(getTransaction);
   }
 
   async getTransaction() {

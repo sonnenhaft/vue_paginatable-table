@@ -1,7 +1,7 @@
 <script>
   export default {
-    props: ['hash'],
-    template: `<router-link :to="link" tag="a" :title="hash" >{{ hash | shortHash }}<slot/></router-link>`,
+    props: ['hash', 'noLink'],
+    template: `<router-link :to="link" :tag="noLink ? 'span' : 'a'" :title="hash">{{ hash | shortHash }}<slot/></router-link>`,
     computed: {
       link() {
         return `/transactions/${ this.hash }`
