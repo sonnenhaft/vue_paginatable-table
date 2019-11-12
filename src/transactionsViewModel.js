@@ -2,7 +2,7 @@ import {action, observable} from 'mobx'
 import {create, persist} from 'mobx-persist'
 import {Web3Wrapper} from './Web3Wrapper';
 
-// import { Web3WrapperFake as Web3Wrapper } from './Web3Wrapper.fake';
+import { Web3WrapperFake } from './Web3Wrapper.fake';
 
 
 class TransactionsViewModel {
@@ -21,7 +21,7 @@ class TransactionsViewModel {
     firstLoad = true;
 
     constructor() {
-        this.web3Wrapper = new Web3Wrapper('rinkeby.infura.io')
+        this.web3Wrapper = location.hash.includes('stub') ? new Web3WrapperFake('') : new Web3Wrapper('rinkeby.infura.io')
     }
 
     @action.bound
