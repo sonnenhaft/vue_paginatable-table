@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://sonnenhaft.github.io/vue_paginatable-table",
   "scripts": {
-    "serve": "vue-cli-service serve --port=7777",
+    "start": "vue-cli-service serve --port=7777",
     "build": "vue-cli-service build --outputDir=./dirr",
     "lint:fix": "vue-cli-service lint --fix"
   },

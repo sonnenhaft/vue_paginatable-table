@@ -4,12 +4,12 @@ demo [here](https://sonnenhaft.github.io/vue_paginatable-table)
 
 ## Project setup
 ```
-npm install
+npm i
 ```
 
 ### Development
 ```
-npm run serve
+npm run start
 ```
 Will run project for dev env on http://localhost:7777 
 
@@ -18,7 +18,7 @@ Will run project for dev env on http://localhost:7777
 npm run build
 ```
 
-Build will be done to docs folder, if you push to master, demo will be (in few minutes) available on github pages on https://sonnenhaft.github.io/vue_paginatable-table so feel free to push content of /docs folder if it changed.
+Build will be done to build folder, if you push to master, demo will be (in few minutes) available on github pages on https://sonnenhaft.github.io/vue_paginatable-table so feel free to push content of /build folder if it changed.
 
 ### Lint, with fix - just simple eslint from vue-cli
 ```
